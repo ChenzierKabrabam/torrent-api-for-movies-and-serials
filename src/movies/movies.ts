@@ -26,7 +26,7 @@ movieRouter.get('/genre/:name', (req: Request, res: Response): void => {
 })
 
 //search a movie
-movieRouter.get('/sm', (req: Request, res: Response): void => {
+movieRouter.get('/search/:name', (req: Request, res: Response): void => {
   const filter: MovieQueryParams = {
     quality: !req.query.quality ? 'all' : req.query.quality,
     genre: !req.query.genre ? 'all' : req.query.genre,
@@ -35,7 +35,7 @@ movieRouter.get('/sm', (req: Request, res: Response): void => {
     orderBy: !req.query.order_by ? 'desc' : req.query.order_by,
   }
 
-  const search: string | qs.ParsedQs | qs.ParsedQs[] | string[] | undefined = req.query.name
+  const search: string | qs.ParsedQs | qs.ParsedQs[] | string[] | undefined = req.params.name
 
   axios
     .get(
