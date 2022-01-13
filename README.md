@@ -1,1 +1,1 @@
-# popcorn-api
+# Torrent API for Movies and Serials
