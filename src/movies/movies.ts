@@ -11,7 +11,7 @@ const upcomingMovieBaseURL: string = 'https://yts.mx/api/v2/list_upcoming.json'
 // get all the latest movies
 movieRouter.get('/latest', (req: Request, res: Response): void => {
   axios
-    .get(`${movieListBaseURL}?sort_by=year&limit=2`)
+    .get(`${movieListBaseURL}?sort_by=year`)
     .then((result: AxiosResponse): Response => res.send(result.data))
     .catch((error: any): Response => res.send(error))
 })
@@ -20,7 +20,7 @@ movieRouter.get('/latest', (req: Request, res: Response): void => {
 movieRouter.get('/genre/:name', (req: Request, res: Response): void => {
   const genre: string = req.params.name
   axios
-    .get(`${movieListBaseURL}?sort_by=year&genre=${genre}&limit=2`)
+    .get(`${movieListBaseURL}?sort_by=year&genre=${genre}`)
     .then((result: AxiosResponse): Response => res.send(result.data))
     .catch((error: any): Response => res.send(error))
 })
