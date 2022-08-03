@@ -1,3 +1,13 @@
+/*
+ * File Created: Wednesday, 3rd August 2022 9:53:41 pm
+ * Author: Chenzier Kabrabam
+ * -----
+ * Last Modified: Wednesday, 3rd August 2022 10:00:59 pm
+ * Modified By: Chenzier Kabrabam
+ * -----
+ * Copyright 2022
+ */
+
 import express, { Router, Request, Response } from 'express';
 import axios, { AxiosResponse } from 'axios';
 import { MovieDetailQueryParams, MovieQueryParams } from '../@types/routes';
